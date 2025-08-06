@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+.dashboard-bg {
+  background-image: linear-gradient(135deg, rgba(255, 150, 102, 0.1) 0%, rgba(255, 150, 102, 0.05) 100%),
+    url('https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.expense-chart {
+  height: 300px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.overlay-content {
+  background: white;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.nav-hover-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f2937;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.nav-hover-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #1f2937;
+}
+
+.nav-item:hover .nav-hover-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
